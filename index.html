@@ -37,7 +37,7 @@ background-color: rgb(0, 102, 255);
         #weight-converter h3 {
             font-family: sans-serif;
             color: black;
-            font-weight: lighter;
+            font-weight: bold;
         }
 
         #myval {
@@ -91,7 +91,7 @@ background-color: rgb(0, 102, 255);
             let kg = document.getElementById("kg");
             let num = 2.2046;
             let finalval = parseInt(val) / num;
-            kg.innerHTML = "Your weight in kilogram is&nbsp" +"<b>"+ parseInt(finalval) + "&nbspkg"+"</b>";
+            kg.innerHTML = "<b>Your weight in kilogram</b> is&nbsp" +"<b>"+ parseInt(finalval) + "&nbspkg"+"</b>";
             document.getElementById("myval").value = "";
             let error = document.getElementById("error");
 
