@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weight-converter</title>
+    <style>
+
+
+body{
+background-color: rgb(0, 102, 255);
+}
+
+
+        #weight-converter {
+            display: grid;
+            place-items: center;
+            padding: 1.4rem;
+            width: fit-content;
+            box-shadow: 0 0 10px rgb(78, 78, 78);
+            margin: auto;
+            margin-top: 10%;
+            border-radius: .7rem;
+            background-color: white;
+        }
+
+        #weight-converter h2 {
+            font-family: sans-serif;
+            text-transform: capitalize;
+            color: rgb(7, 97, 231);
+
+        }
+
+
+        #weight-converter h3 {
+            font-family: sans-serif;
+            color: black;
+            font-weight: lighter;
+        }
+
+        #myval {
+            outline: none;
+            border-width: 0px;
+            padding: .6rem;
+            border: .6px solid grey;
+            border-radius: .4rem;
+        }
+
+
+        button {
+            background-color: rgb(7, 97, 231);
+        }
+
+        button:active {
+            background-color: rgb(22, 7, 231);
+        }
+
+
+</style>
+
+</head>
+
+<body>
+
+    <div id="weight-converter">
+
+        <h2>Weight Converter</h2>
+
+        <h3>(pounds to kilograms)</h3>
+
+        <h3>Enter the weight value in pounds</h3>
+
+        <input type="text" id="myval"><br>
+        <span id="error" style="color: red; font-family: sans-serif; "></span><br>
+
+        <button onclick="convert()"
+            style="cursor: pointer; font-size: 1.2rem; word-spacing: .3rem; outline: none; border-width: 0px;  color: white; padding:.7rem; border-radius: .2rem; ">convert</button><br><br>
+
+        <h3><span id="kg"></span></h3>
+
+    </div>
+
+
+    <script>
+
+        function convert() {
+
+            let val = document.getElementById("myval").value;
+            let kg = document.getElementById("kg");
+            let num = 2.2046;
+            let finalval = parseInt(val) / num;
+            kg.innerHTML = "Your weight in kilogram is&nbsp" +"<b>"+ parseInt(finalval) + "&nbspkg"+"</b>";
+            document.getElementById("myval").value = "";
+            let error = document.getElementById("error");
+
+            if (isNaN(val)) {
+                error.innerHTML = "value should be number only";
+                kg.innerHTML = "";
+                document.getElementById("myval").style.border = ".6px solid red";
+            }
+            else {
+                error.innerHTML = "";
+                document.getElementById("myval").style.border = ".6px solid grey";
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html> 
